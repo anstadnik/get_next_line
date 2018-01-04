@@ -6,7 +6,7 @@
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 14:26:43 by astadnik          #+#    #+#             */
-/*   Updated: 2017/12/23 15:10:46 by astadnik         ###   ########.fr       */
+/*   Updated: 2017/12/30 12:45:46 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 
 int	ft_atoi(const char *s)
 {
-	char	neg;
-	long	rez;
+	char				neg;
+	unsigned long long	rez;
 
 	rez = 0;
 	neg = 0;
-	while (ft_isspace(*s))
+	while (ft_iswhitespace(*s))
 		s++;
 	if (*s == '-' || *s == '+')
 		if (*s++ == '-')
@@ -33,12 +33,9 @@ int	ft_atoi(const char *s)
 		s++;
 	while (ft_isdigit(*s))
 	{
-		rez = rez * 10 + (long)(*s++ - '0');
-		if ((rez > INT_MAX && !neg) || (rez * -1 < INT_MIN && neg))
-		{
-			ft_putendl_fd("I am ft_atoi, sorry, there is too much", 2);
-			return (neg ? INT_MIN : INT_MAX);
-		}
+		rez = rez * 10 + (unsigned long long)(*s++ - '0');
+		if (rez > 9223372036854775807 || (rez - 1 > 9223372036854775807 && neg))
+			return (neg ? 0 : -1);
 	}
 	return (neg ? -1 * (int)rez : (int)rez);
 }

@@ -6,7 +6,7 @@
 /*   By: astadnik <astadnik@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 15:26:06 by astadnik          #+#    #+#             */
-/*   Updated: 2017/12/26 14:54:23 by astadnik         ###   ########.fr       */
+/*   Updated: 2017/12/31 15:26:15 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@
 # include "libft/libft.h"
 # define BUFF_SIZE 1000
 
-int						get_next_line(const int fd, char **line);
+int	get_next_line(const int fd, char **line);
 
 #endif

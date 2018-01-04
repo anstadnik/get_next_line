@@ -6,12 +6,11 @@
 /*   By: astadnik <astadnik@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 15:33:54 by astadnik          #+#    #+#             */
-/*   Updated: 2017/12/28 18:18:58 by astadnik         ###   ########.fr       */
+/*   Updated: 2017/12/30 12:50:33 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
 
 /*
 ** Puts the next string from appropriate fd list to the line. If more reading
@@ -60,8 +59,9 @@ static int		fill_rest(t_list *cur, char **line)
 	while (beg && *beg)
 	{
 		end = ft_strchr(beg, '\n');
-		*content = ft_lstnew(beg,
-				end ? (size_t)(end - beg) + 1 : ft_strlen(beg) + 1);
+		if (!(*content = ft_lstnew(beg,
+				end ? (size_t)(end - beg) + 1 : ft_strlen(beg) + 1)))
+			return (-1);
 		if (end)
 			((char*)((*content)->content))[(size_t)(end - beg)] = '\0';
 		(*content)->content_size = end ? 1 : 0;

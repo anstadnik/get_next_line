@@ -6,7 +6,7 @@
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/29 18:35:10 by astadnik          #+#    #+#             */
-/*   Updated: 2017/12/25 19:13:26 by astadnik         ###   ########.fr       */
+/*   Updated: 2017/12/30 12:34:11 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
-# define UINT_MAX 4294967295
 
 typedef	struct		s_list
 {
